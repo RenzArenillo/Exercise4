@@ -4,6 +4,6 @@
     <div [ngClass]="['card']">
         <app-blog-item [blog]="data"></app-blog-item>
     </div>
-    <button types="button" class="btn btn-danger" (click)="editBook(i)">Edit</button>
+    <button types="button" class="btn btn-danger" (click)="editBook(i,data)">Edit</button>
     <button types="button" class="btn btn-danger" (click)="deleteBook(i)">Delete</button>
 </div>

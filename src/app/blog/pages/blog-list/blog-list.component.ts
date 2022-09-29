@@ -28,8 +28,8 @@ export class BlogListComponent implements OnInit {
     } 
   }
 
-  editBook(i:number) {
-    this.router.navigate(['/blog','form'])
+  editBook(i:number,blog:Blog) {
+    this.router.navigate(['/blog/form', blog])
   }
 
   execAction(event: {data: {name: string, desc: string}, action: string}) {
