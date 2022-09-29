@@ -1,1 +1,9 @@
-<p>book-list works!</p>
+<div *ngFor="let data of books; let i = index">
+    <div [ngClass]="['card']">
+        <app-book-item [book]="data"></app-book-item>
+    </div>
+    <button types="button" class="btn btn-danger" (click)="editBook(i)">Edit</button>
+    <button types="button" class="btn btn-danger" (click)="deleteBook(i)">Delete</button>
+</div>
+
+

@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  userForm: FormGroup
 
-  ngOnInit(): void {
+  constructor(fb:FormBuilder) { 
+    this.userForm = fb.group({
+      email: [''],
+      name: [''],
+      bio: [''],
+      active: ['']
+    })
   }
 
+  ngAfterViewInit(): void {
+    const user = this.userForm.value as User
+  }
+
+  ngOnInit(): void {
+    this.userForm.valueChanges.subscribe((data) => {
+      console.log(data)
+    })
+  }
+
+  submit() {
+    console.log(this.userForm.get('name')?.errors)
+  }
 }

@@ -1,1 +1,7 @@
-<p>blog-list works!</p>
+<div *ngFor="let data of blogs; let i = index">
+    <div [ngClass]="['card']">
+        <app-blog-item [blog]="data"></app-blog-item>
+    </div>
+    <button types="button" class="btn btn-danger" (click)="editBook(i)">Edit</button>
+    <button types="button" class="btn btn-danger" (click)="deleteBook(i)">Delete</button>
+</div>
