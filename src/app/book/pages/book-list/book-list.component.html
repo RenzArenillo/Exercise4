@@ -1,3 +1,5 @@
+<app-commandbar [buttons] ="buttons" (actionEmitter)="execAction($event)" ></app-commandbar>
+<router-outlet></router-outlet>
 <div *ngFor="let data of books; let i = index">
     <div [ngClass]="['card']">
         <app-book-item [book]="data"></app-book-item>

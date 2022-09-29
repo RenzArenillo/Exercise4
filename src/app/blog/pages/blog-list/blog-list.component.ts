@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Blog } from '../../models/blog';
 import { BlogService } from '../../services/blog.service';
 
@@ -8,6 +8,9 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit {
+
+  @Input() buttons = [{label: 'Add', action: 'add'}, 
+  {label: 'Delete All', action: 'deleteAll'}]
 
   public blogs : Blog[] = [];
 
@@ -26,5 +29,14 @@ export class BlogListComponent implements OnInit {
 
   editBook(i:number) {
     
+  }
+
+  execAction(event: {data: {name: string, desc: string}, action: string}) {
+    switch(event.action) {
+      case 'add':
+        break
+      case 'deleteAll':
+        break
+    }
   }
 }

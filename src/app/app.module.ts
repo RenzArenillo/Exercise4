@@ -12,13 +12,14 @@ import { CommandbarComponent } from './shared/components/commandbar/commandbar.c
   declarations: [
     AppComponent,
     HeaderComponent,
-    CommandbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
- 
+    
+  ],
+  exports: [
   ],
   providers: [BookService],
   bootstrap: [AppComponent]

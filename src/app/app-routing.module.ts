@@ -4,6 +4,11 @@ import { ProfileComponent } from './user/pages/profile/profile.component';
 
 const routes: Routes = [
   {
+    path: "",
+    redirectTo: "blog",
+    pathMatch: 'full'
+  },
+  {
     path: "book",
     loadChildren: () => import('./book/book.module').then(m => m.BookModule)
   },
