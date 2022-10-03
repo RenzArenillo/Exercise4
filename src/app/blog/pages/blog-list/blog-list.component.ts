@@ -28,6 +28,7 @@ export class BlogListComponent implements OnInit {
       this.blogs.splice(i, 1);
     } 
   }
+  //ssssss
 
   editBook(i:number,blog:Blog) {
     this.router.navigate(['/blog/form', blog])
