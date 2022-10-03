@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Blog } from '../../models/blog';
 import { BlogService } from '../../services/blog.service';
 
-//sssssss
+//ssssssssssssss
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
